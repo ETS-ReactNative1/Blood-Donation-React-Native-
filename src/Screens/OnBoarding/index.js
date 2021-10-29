@@ -4,8 +4,13 @@ import Onboarding from 'react-native-onboarding-swiper';
 import color from '../../Shared/Color';
 import { commonStyle } from '../../Shared/CommonStyle';
 import fontFamily from '../../Shared/FontFamily';
+import { useNavigation } from '@react-navigation/native';
+import {getMyStringValue, setStringValue} from '../../Global/AsyncStorage';
+
 
 const OnBoarding = () => {
+
+  const navigation = useNavigation();
 
   const onboardingImages = [
     {
@@ -25,13 +30,32 @@ const OnBoarding = () => {
   ];
 
 
+  const onBoardingDone = async () => {
+    try{
+      await setStringValue('onboarding', 'true');
+      await navigation.navigate("Login");
+    }catch(error){
+      console.warn(error);
+    }
+  }
+
+  React.useEffect( async () => {
+    const onboarding = await getMyStringValue("onboarding");
+    
+    if(onboarding === "true"){
+      navigation.navigate("Login");
+    }
+  }, [])
+
+
+
   return (
    <View style={styles.main2}>
      <StatusBar backgroundColor="white" barStyle="dark-content" />
      <Onboarding 
       pages={onboardingImages}
-      onDone={ ()=>console.warn("done") }
-      onSkip={ ()=>console.warn("Skip") }
+      onDone={ ()=> onBoardingDone() }
+      onSkip={ ()=> onBoardingDone() }
       titleStyles={
         commonStyle(
           {
