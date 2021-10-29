@@ -1,6 +1,9 @@
 import React from 'react';
 import {Image, View, StatusBar, StyleSheet} from 'react-native';
 import Onboarding from 'react-native-onboarding-swiper';
+import color from '../../Shared/Color';
+import { commonStyle } from '../../Shared/CommonStyle';
+import fontFamily from '../../Shared/FontFamily';
 
 const OnBoarding = () => {
   const onboardingImages = [
@@ -26,6 +29,21 @@ const OnBoarding = () => {
       pages={onboardingImages}
       onDone={ ()=>console.warn("done") }
       onSkip={ ()=>console.warn("Skip") }
+      titleStyles={
+        commonStyle(
+          {
+            fontSize:18, 
+            fontFamily:fontFamily.PoppinsBold,
+            color:color.primary
+          }).text
+      }
+      subTitleStyles ={
+        commonStyle({
+          fontSize:14,
+          fontFamily:fontFamily.PoppinsLight,
+          color:color.black
+        }).text
+      }
      />
    </View>
   );
