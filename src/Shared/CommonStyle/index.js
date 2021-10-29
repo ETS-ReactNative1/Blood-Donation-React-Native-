@@ -3,11 +3,11 @@ import fontValue from '../FontFamily';
 
 export const commonStyle = (obj) => {
     const { 
-        fontSize = '14',
-        fontFamily =fontValue.PoppinsBlack,
-        color = '#7E7E7E',  
+        fontSize        = '14',
+        fontFamily      = fontValue.PoppinsBlack,
+        color           = '#7E7E7E',
         backgroundColor = '#FF2156'
-    } = obj;
+    }  = obj;
 
     const style = {
         text:{
