@@ -1,7 +1,12 @@
 import React from 'react';
+import {View, Text} from 'react-native';
 
 const Singup = () => {
-  return <div></div>;
+  return (
+    <View>
+      <Text>Signup</Text>
+    </View>
+  );
 };
 
 export default Singup;

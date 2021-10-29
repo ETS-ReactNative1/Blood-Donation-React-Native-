@@ -6,6 +6,7 @@ import { commonStyle } from '../../Shared/CommonStyle';
 import fontFamily from '../../Shared/FontFamily';
 
 const OnBoarding = () => {
+
   const onboardingImages = [
     {
       backgroundColor: '#FFF',
@@ -22,8 +23,10 @@ const OnBoarding = () => {
       subtitle: 'Done with React Native Onboarding Swiper'
     }
   ];
+
+
   return (
-   <View style={styles.main}>
+   <View style={styles.main2}>
      <StatusBar backgroundColor="white" barStyle="dark-content" />
      <Onboarding 
       pages={onboardingImages}
@@ -52,7 +55,7 @@ const OnBoarding = () => {
 };
 
 const styles = StyleSheet.create({
-  main:{
+  main2:{
     height: '100%',
     width: '100%'
   }
