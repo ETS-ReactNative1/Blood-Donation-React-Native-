@@ -20,10 +20,20 @@ const StackNavigation = () => {
             <Stack.Screen 
                 name="Login" 
                 component={Login} 
+                options={
+                    {
+                        headerMode: false
+                    }
+                }
             />
             <Stack.Screen 
                 name="Singup" 
                 component={Singup} 
+                options={
+                    {
+                        headerMode: false
+                    }
+                }
             />
       </Stack.Navigator>
     );

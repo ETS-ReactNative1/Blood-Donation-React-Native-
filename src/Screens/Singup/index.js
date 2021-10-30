@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StatusBar} from 'react-native';
 
 const Singup = () => {
   return (
     <View>
-      <Text>Signup</Text>
+      <StatusBar backgroundColor="white" />
     </View>
   );
 };
