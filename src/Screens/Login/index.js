@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button, Image, StatusBar, StyleSheet, Text, View} from 'react-native';
-import {Input} from 'react-native-elements';
+import {Image, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {Button, Input} from 'react-native-elements';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import colorValue from '../../Shared/Color';
 import {commonJustify, commonStyle} from '../../Shared/CommonStyle';
@@ -29,19 +29,24 @@ const Login = ({navigation}) => {
             placeholder="Enter your password"
             leftIcon={{type: 'ant-design', name: 'lock'}}
           />
-          <Button style={{backgroundColor: 'red'}} title="Solid Button" />
+          <Button
+            onPress={() => navigation.navigate('ButtomNavigation')}
+            buttonStyle={{backgroundColor: colorValue.primary}}
+            title="Solid Button"
+          />
 
           {/* Forget Password */}
           <View style={commonJustify.rowCenter}>
             <TouchableOpacity>
               <Text
-                style={
+                style={[
                   commonStyle({
                     fontSize: 14,
                     fontFamily: fontFamily.PoppinsMedium,
                     color: colorValue.primary,
-                  }).text
-                }>
+                  }).text,
+                  {margin: 10},
+                ]}>
                 Forget Password ?
               </Text>
             </TouchableOpacity>

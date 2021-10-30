@@ -3,6 +3,7 @@ import React from 'react';
 import Login from '../Screens/Login';
 import OnBoarding from '../Screens/OnBoarding';
 import Singup from '../Screens/Singup';
+import ButtomNavigation from './ButtomNavigation';
 const Stack = createStackNavigator();
 
 const StackNavigation = () => {
@@ -28,6 +29,11 @@ const StackNavigation = () => {
         options={{
           headerMode: false,
         }}
+      />
+      <Stack.Screen
+        name="ButtomNavigation"
+        component={ButtomNavigation}
+        options={{headerMode: false}}
       />
     </Stack.Navigator>
   );
