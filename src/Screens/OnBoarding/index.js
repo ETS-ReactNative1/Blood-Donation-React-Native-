@@ -42,7 +42,7 @@ const OnBoarding = () => {
     const onboarding = await getMyStringValue('onboarding');
 
     if (onboarding === 'true') {
-      navigation.navigate('Login');
+      navigation.navigate('ButtomNavigation');
     }
   }, []);
 
