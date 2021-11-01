@@ -23,6 +23,7 @@
     "react-native-onboarding-swiper": "^1.1.4",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
+    "react-native-swiper-flatlist": "^3.0.15",
     "react-native-vector-icons": "^9.0.0"
   },
   "devDependencies": {
