@@ -1,10 +1,15 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {FlatList, View} from 'react-native';
+import RequestCard from './RequestCard';
+import {donationRequest} from './RequestData';
 
 const DonateRequest = () => {
   return (
     <View>
-      <Text>DonateRequest</Text>
+      <FlatList
+        data={donationRequest}
+        renderItem={({item}) => <RequestCard item={item} />}
+      />
     </View>
   );
 };

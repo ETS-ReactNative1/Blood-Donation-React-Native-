@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {Image, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import {Badge, Icon} from 'react-native-elements';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -9,6 +9,8 @@ import Home from '../Screens/Home';
 import Profile from '../Screens/Profile';
 import Search from '../Screens/Search';
 import colorValue from '../Shared/Color';
+import {commonStyle} from '../Shared/CommonStyle';
+import fontFamily from '../Shared/FontFamily';
 const Tab = createBottomTabNavigator();
 
 const ButtomNavigation = () => {
@@ -63,6 +65,41 @@ const ButtomNavigation = () => {
             <AntDesign name="doubleright" size={24} color={color} />
           ),
           title: '',
+          headerLeft: () => (
+            <View
+              style={{
+                marginHorizontal: 5,
+                flexDirection: 'row',
+                justifyContent: 'space-evenly',
+              }}>
+              <Image
+                resizeMode="contain"
+                style={{width: 25, height: 25}}
+                source={require('../../assets/image/menu.png')}
+              />
+              <Text
+                style={[
+                  commonStyle({
+                    fontSize: 14,
+                    fontFamily: fontFamily.PoppinsBold,
+                    color: colorValue.primary,
+                  }).text,
+                  ,
+                  {marginLeft: 10},
+                ]}>
+                Donate Request
+              </Text>
+            </View>
+          ),
+
+          headerRight: () => (
+            <View style={{marginHorizontal: 5}}>
+              <View>
+                <Badge status="error" value={10} />
+              </View>
+              <Fontisto name="bell" size={25} />
+            </View>
+          ),
         }}
       />
       <Tab.Screen
@@ -73,6 +110,41 @@ const ButtomNavigation = () => {
             <AntDesign name="user" size={24} color={color} />
           ),
           title: '',
+          headerLeft: () => (
+            <View
+              style={{
+                marginHorizontal: 5,
+                flexDirection: 'row',
+                justifyContent: 'space-evenly',
+              }}>
+              <Image
+                resizeMode="contain"
+                style={{width: 25, height: 25}}
+                source={require('../../assets/image/menu.png')}
+              />
+              <Text
+                style={[
+                  commonStyle({
+                    fontSize: 14,
+                    fontFamily: fontFamily.PoppinsBold,
+                    color: colorValue.primary,
+                  }).text,
+                  ,
+                  {marginLeft: 10},
+                ]}>
+                Profile
+              </Text>
+            </View>
+          ),
+
+          headerRight: () => (
+            <View style={{marginHorizontal: 5}}>
+              <View>
+                <Badge status="error" value={10} />
+              </View>
+              <Fontisto name="bell" size={25} />
+            </View>
+          ),
         }}
       />
     </Tab.Navigator>
