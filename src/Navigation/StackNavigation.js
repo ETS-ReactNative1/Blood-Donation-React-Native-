@@ -1,6 +1,7 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import Login from '../Screens/Login';
+import NotificationScreen from '../Screens/NotificationScreen';
 import OnBoarding from '../Screens/OnBoarding';
 import Singup from '../Screens/Singup';
 import ButtomNavigation from './ButtomNavigation';
@@ -35,6 +36,7 @@ const StackNavigation = () => {
         component={ButtomNavigation}
         options={{headerMode: false}}
       />
+      <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
     </Stack.Navigator>
   );
 };

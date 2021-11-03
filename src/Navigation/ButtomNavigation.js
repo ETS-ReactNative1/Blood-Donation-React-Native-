@@ -1,7 +1,9 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 import {Badge, Icon} from 'react-native-elements';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import DonateRequest from '../Screens/DonateRequest';
@@ -14,6 +16,7 @@ import fontFamily from '../Shared/FontFamily';
 const Tab = createBottomTabNavigator();
 
 const ButtomNavigation = () => {
+  const navigation = useNavigation();
   return (
     <Tab.Navigator
       screenOptions={{
@@ -38,12 +41,14 @@ const ButtomNavigation = () => {
           ),
 
           headerRight: () => (
-            <View style={{marginHorizontal: 5}}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('NotificationScreen')}
+              style={{marginHorizontal: 5}}>
               <View>
                 <Badge status="error" value={10} />
               </View>
               <Fontisto name="bell" size={25} />
-            </View>
+            </TouchableOpacity>
           ),
         }}
       />
@@ -55,6 +60,41 @@ const ButtomNavigation = () => {
             <Icon name="search" size={24} color={color} />
           ),
           title: '',
+          headerLeft: () => (
+            <View
+              style={{
+                marginHorizontal: 5,
+                flexDirection: 'row',
+                justifyContent: 'space-evenly',
+              }}>
+              <Image
+                resizeMode="contain"
+                style={{width: 25, height: 25}}
+                source={require('../../assets/image/menu.png')}
+              />
+              <Text
+                style={[
+                  commonStyle({
+                    fontSize: 14,
+                    fontFamily: fontFamily.PoppinsBold,
+                    color: colorValue.primary,
+                  }).text,
+                  ,
+                  {marginLeft: 10},
+                ]}>
+                Find Doner
+              </Text>
+            </View>
+          ),
+
+          headerRight: () => (
+            <View style={{marginHorizontal: 5}}>
+              <View>
+                <Badge status="error" value={10} />
+              </View>
+              <Fontisto name="bell" size={25} />
+            </View>
+          ),
         }}
       />
       <Tab.Screen
